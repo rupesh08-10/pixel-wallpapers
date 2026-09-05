@@ -1,0 +1,677 @@
+/* =========================================
+   PIXEL WALLPAPERS - DARK PIXEL THEME
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050816;
+    color: #f2f2f2;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #090b1a,
+        #10152c,
+        #090b1a
+    );
+
+    border-bottom: 2px solid #252b4a;
+
+    padding: 20px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.7);
+
+    position: relative;
+}
+
+
+/* Small neon glow at top */
+
+header::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #8e2de2,
+        #00d9ff,
+        #7cff4f,
+        #8e2de2
+    );
+}
+
+
+/* Logo */
+
+header img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    margin-bottom: 5px;
+
+    filter:
+        drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
+}
+
+
+/* Website title */
+
+header h1 {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    margin-bottom: 5px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px rgba(0, 217, 255, 0.5);
+}
+
+
+/* Header description */
+
+header p {
+    color: #aeb6d4;
+
+    font-size: 16px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   NAVIGATION DROPDOWN
+   ========================================= */
+
+header select {
+    background: #0b1022;
+
+    color: #ffffff;
+
+    border: 1px solid #394263;
+
+    border-radius: 8px;
+
+    padding: 11px 18px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+header select:hover {
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+header select:focus {
+    border-color: #8e2de2;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+main {
+    width: 94%;
+
+    max-width: 1400px;
+
+    margin: 40px auto;
+
+    text-align: center;
+}
+
+
+/* Main headings */
+
+main h1,
+main h2,
+main h3 {
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+
+main h1 {
+    font-size: 32px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, 0.35);
+}
+
+
+main h2 {
+    font-size: 26px;
+
+    color: #d9dcff;
+}
+
+
+main h3 {
+    font-size: 20px;
+
+    color: #00d9ff;
+}
+
+
+/* Paragraphs */
+
+main p {
+    max-width: 900px;
+
+    margin: 0 auto 20px;
+
+    color: #b9bfd6;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   WALLPAPER GALLERY
+   ========================================= */
+
+#gallery {
+    width: 100%;
+
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+    align-items: start;
+}
+
+
+/* Images loaded by JavaScript */
+
+#gallery img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 10px;
+
+    border: 1px solid #292f50;
+
+    background: #0b1022;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Image hover effect */
+
+#gallery img:hover {
+    transform: translateY(-6px) scale(1.02);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        0 0 15px rgba(0, 217, 255, 0.25);
+}
+
+
+/* =========================================
+   CATEGORY PAGE
+   ========================================= */
+
+main > a {
+    display: inline-block;
+
+    margin: 10px;
+
+    text-decoration: none;
+}
+
+
+/* Category images */
+
+main > a img {
+    width: 220px;
+
+    height: 140px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    border: 1px solid #303758;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Category hover */
+
+main > a img:hover {
+    transform: translateY(-7px);
+
+    border-color: #8e2de2;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(142, 45, 226, 0.35);
+}
+
+
+/* =========================================
+   LISTS - ABOUT PAGE
+   ========================================= */
+
+main ul {
+    max-width: 700px;
+
+    margin: 20px auto 30px;
+
+    padding: 20px 40px;
+
+    text-align: left;
+
+    background: #0a0f21;
+
+    border: 1px solid #252d4c;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+main li {
+    color: #c4c9dd;
+
+    margin: 8px 0;
+
+    padding-left: 5px;
+}
+
+
+main li::marker {
+    color: #00d9ff;
+}
+
+
+/* =========================================
+   CONTACT FORM
+   ========================================= */
+
+form {
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    padding: 30px;
+
+    background: #0a0f21;
+
+    border: 1px solid #292f50;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.5);
+
+    text-align: left;
+}
+
+
+/* Labels */
+
+form label {
+    display: block;
+
+    margin: 15px 0 7px;
+
+    color: #00d9ff;
+
+    font-weight: bold;
+}
+
+
+/* Text inputs */
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background: #050816;
+
+    color: #ffffff;
+
+    border: 1px solid #303758;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+/* Textarea */
+
+form textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+
+/* Input focus */
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.2);
+}
+
+
+/* Submit button */
+
+form input[type="submit"] {
+    margin-top: 20px;
+
+    padding: 12px 28px;
+
+    background: linear-gradient(
+        135deg,
+        #8e2de2,
+        #00a8cc
+    );
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+form input[type="submit"]:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    margin-top: 60px;
+
+    padding: 30px 20px;
+
+    background: #070a16;
+
+    border-top: 1px solid #252b4a;
+
+    color: #9299b5;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+footer h2 {
+    color: #ffffff;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+footer p {
+    max-width: 800px;
+
+    margin: 10px auto;
+
+    line-height: 1.7;
+}
+
+
+footer a {
+    color: #00d9ff;
+
+    text-decoration: none;
+}
+
+
+footer a:hover {
+    color: #8e2de2;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* Tablets */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 15px;
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    main {
+        width: 92%;
+
+        margin-top: 30px;
+    }
+
+    main h1 {
+        font-size: 27px;
+    }
+
+    #gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 14px;
+    }
+
+    #gallery img {
+        height: 230px;
+    }
+
+    main > a img {
+        width: 190px;
+        height: 125px;
+    }
+
+    form {
+        padding: 22px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 15px 10px;
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+    }
+
+    header h1 {
+        font-size: 21px;
+
+        letter-spacing: 1px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+    header select {
+        width: 90%;
+
+        padding: 10px;
+    }
+
+    main {
+        width: 94%;
+
+        margin: 25px auto;
+    }
+
+    main h1 {
+        font-size: 24px;
+    }
+
+    main h2 {
+        font-size: 21px;
+    }
+
+    main p {
+        font-size: 14px;
+    }
+
+    #gallery {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    #gallery img {
+        width: 100%;
+
+        height: auto;
+
+        max-height: 500px;
+
+        object-fit: cover;
+    }
+
+    main > a {
+        display: block;
+
+        margin: 15px auto;
+    }
+
+    main > a img {
+        width: 100%;
+
+        max-width: 350px;
+
+        height: 180px;
+    }
+
+    main ul {
+        padding: 18px 30px;
+    }
+
+    form {
+        width: 100%;
+
+        padding: 18px;
+    }
+
+    footer {
+        margin-top: 40px;
+
+        padding: 25px 15px;
+    }
+}
