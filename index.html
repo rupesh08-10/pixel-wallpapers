@@ -41,43 +41,53 @@
             This is a free-to-use wallpaper website where you can
             download free pixel wallpapers.
         </p>
-        <div id="gallery"></div>
+        <h3>Explore your favorite wallpapers , from various categories</h3>
+        <a href="nature.html">
+        <img src="image/nature.jpg" alt="Nature">
+        </a>
+        <a href="animal.html">
+            <img src="image/animal.jpg" alt="Animal">
+        </a>
+        <a href="city.html">
+            <img src="image/city.jpg" alt="City">
+        </a>
+        <a href="space.html">
+            <img src="image/space.jpg" alt="Space">
+        </a>
+        <a href="city.html">
+            <img src="image/city.jpg" alt="City">
+        </a>
+        <a href="landscape.html">
+            <img src="image/landscape.jpg" alt="Landscape">
+        </a>
+        <section class="featured">
 
+    <h2>Featured Wallpapers</h2>
 
+    <p>Some of our favorite wallpapers</p>
 
-    </main>
-    <footer> thanks for visit : </footer>
-    <script src="script.js"></script>
+    <div id="featured-gallery"></div>
 
-    <script>
-        loadImages("animal", "animal", 100);
-    </script>
-    <script src="script.js"></script>
+</section>
+</main>
+<footer> thanks for visit : </footer>
 
-    <script>
-        loadImages("nature", "nature", 100);
-    </script>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
-    <script>
-        loadImages("cars", "cars", 100);
-    </script>
-    <script src="script.js"></script>
+<script>
+    Promise.all([
+        loadImages("animal", "animal"),
+        loadImages("nature", "nature"),
+        loadImages("cars", "cars"),
+        loadImages("city", "city"),
+        loadImages("gaming", "gaming"),
+        loadImages("Space", "Space")
+    ]).then(function () {
 
-    <script>
-        loadImages("city", "city", 100);
-    </script>
-    <script src="script.js"></script>
+        // All category images have finished loading
+        loadFeaturedImages();
 
-    <script>
-        loadImages("gaming", "gaming", 100);
-    </script>
-    <script src="script.js"></script>
-
-    <script>
-        loadImages("spae", "spae", 100);
-    </script>
-
+    });
+</script>
 </body>
-
 </html>

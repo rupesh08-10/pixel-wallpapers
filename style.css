@@ -34,24 +34,18 @@ header {
     );
 
     border-bottom: 2px solid #252b4a;
-
     padding: 20px 30px;
-
     text-align: center;
 
-    box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 
     position: relative;
 }
 
-
-/* Small neon glow at top */
-
 header::before {
     content: "";
-    position: absolute;
 
+    position: absolute;
     top: 0;
     left: 0;
 
@@ -75,11 +69,11 @@ header img {
     height: 100px;
 
     object-fit: contain;
-
     margin-bottom: 5px;
 
-    filter:
-        drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
+    filter: drop-shadow(
+        0 0 8px rgba(0, 217, 255, 0.5)
+    );
 }
 
 
@@ -89,7 +83,6 @@ header h1 {
     color: #ffffff;
 
     font-size: 32px;
-
     margin-bottom: 5px;
 
     letter-spacing: 2px;
@@ -105,22 +98,19 @@ header p {
     color: #aeb6d4;
 
     font-size: 16px;
-
     margin-bottom: 18px;
 }
 
 
 /* =========================================
-   NAVIGATION DROPDOWN
+   NAVIGATION
    ========================================= */
 
 header select {
     background: #0b1022;
-
     color: #ffffff;
 
     border: 1px solid #394263;
-
     border-radius: 8px;
 
     padding: 11px 18px;
@@ -128,7 +118,6 @@ header select {
     font-size: 15px;
 
     cursor: pointer;
-
     outline: none;
 
     transition: 0.3s;
@@ -152,7 +141,6 @@ header select:focus {
 
 main {
     width: 94%;
-
     max-width: 1400px;
 
     margin: 40px auto;
@@ -161,37 +149,30 @@ main {
 }
 
 
-/* Main headings */
+/* Headings */
 
 main h1,
 main h2,
 main h3 {
     color: #ffffff;
-
     margin-bottom: 20px;
 }
 
-
 main h1 {
     font-size: 32px;
-
     letter-spacing: 2px;
 
     text-shadow:
         0 0 10px rgba(0, 217, 255, 0.35);
 }
 
-
 main h2 {
     font-size: 26px;
-
     color: #d9dcff;
 }
 
-
 main h3 {
     font-size: 20px;
-
     color: #00d9ff;
 }
 
@@ -210,7 +191,7 @@ main p {
 
 
 /* =========================================
-   WALLPAPER GALLERY
+   NORMAL WALLPAPER GALLERY
    ========================================= */
 
 #gallery {
@@ -229,19 +210,16 @@ main p {
 }
 
 
-/* Images loaded by JavaScript */
+/* Normal wallpaper images */
 
 #gallery img {
     width: 100%;
-
     height: 260px;
 
     object-fit: cover;
-
     display: block;
 
     border-radius: 10px;
-
     border: 1px solid #292f50;
 
     background: #0b1022;
@@ -255,7 +233,7 @@ main p {
 }
 
 
-/* Image hover effect */
+/* Normal gallery hover */
 
 #gallery img:hover {
     transform: translateY(-6px) scale(1.02);
@@ -265,6 +243,100 @@ main p {
     box-shadow:
         0 8px 25px rgba(0, 0, 0, 0.7),
         0 0 15px rgba(0, 217, 255, 0.25);
+}
+
+
+/* =========================================
+   FEATURED WALLPAPERS
+   ========================================= */
+
+.featured {
+    width: 100%;
+
+    margin-top: 70px;
+    padding: 40px 0;
+
+    text-align: center;
+}
+
+
+/* Featured heading */
+
+.featured h2 {
+    font-size: 32px;
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, 0.35);
+}
+
+
+/* Featured description */
+
+.featured p {
+    color: #b9bfd6;
+
+    font-size: 16px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Featured grid */
+
+#featured-gallery {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Featured images */
+
+#featured-gallery img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    border: 1px solid #303758;
+
+    background: #0b1022;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Featured hover */
+
+#featured-gallery img:hover {
+    transform: translateY(-6px) scale(1.02);
+
+    border-color: #8e2de2;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(142, 45, 226, 0.35);
 }
 
 
@@ -285,7 +357,6 @@ main > a {
 
 main > a img {
     width: 220px;
-
     height: 140px;
 
     object-fit: cover;
@@ -315,7 +386,7 @@ main > a img:hover {
 
 
 /* =========================================
-   LISTS - ABOUT PAGE
+   ABOUT PAGE - LISTS
    ========================================= */
 
 main ul {
@@ -337,7 +408,6 @@ main ul {
         0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-
 main li {
     color: #c4c9dd;
 
@@ -345,7 +415,6 @@ main li {
 
     padding-left: 5px;
 }
-
 
 main li::marker {
     color: #00d9ff;
@@ -463,12 +532,92 @@ form input[type="submit"] {
     transition: 0.3s;
 }
 
-
 form input[type="submit"]:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+
+/* =========================================
+   FULL-SCREEN IMAGE VIEWER
+   ========================================= */
+
+.image-viewer {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+
+/* Large image inside viewer */
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 80%;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+/* Close button */
+
+.close-viewer {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 40px;
+
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+
+/* Download button */
+
+.download-btn {
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    background: white;
+    color: black;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #cccccc;
 }
 
 
@@ -492,7 +641,6 @@ footer {
     font-size: 14px;
 }
 
-
 footer h2 {
     color: #ffffff;
 
@@ -500,7 +648,6 @@ footer h2 {
 
     font-size: 20px;
 }
-
 
 footer p {
     max-width: 800px;
@@ -510,13 +657,11 @@ footer p {
     line-height: 1.7;
 }
 
-
 footer a {
     color: #00d9ff;
 
     text-decoration: none;
 }
-
 
 footer a:hover {
     color: #8e2de2;
@@ -526,10 +671,8 @@ footer a:hover {
 
 
 /* =========================================
-   RESPONSIVE DESIGN
+   TABLET
    ========================================= */
-
-/* Tablets */
 
 @media (max-width: 768px) {
 
@@ -552,7 +695,6 @@ footer a:hover {
 
     main {
         width: 92%;
-
         margin-top: 30px;
     }
 
@@ -561,14 +703,21 @@ footer a:hover {
     }
 
     #gallery {
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
         gap: 14px;
     }
 
     #gallery img {
         height: 230px;
+    }
+
+    #featured-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    #featured-gallery img {
+        height: 190px;
     }
 
     main > a img {
@@ -582,7 +731,9 @@ footer a:hover {
 }
 
 
-/* Mobile */
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 500px) {
 
@@ -597,7 +748,6 @@ footer a:hover {
 
     header h1 {
         font-size: 21px;
-
         letter-spacing: 1px;
     }
 
@@ -607,13 +757,11 @@ footer a:hover {
 
     header select {
         width: 90%;
-
         padding: 10px;
     }
 
     main {
         width: 94%;
-
         margin: 25px auto;
     }
 
@@ -629,49 +777,67 @@ footer a:hover {
         font-size: 14px;
     }
 
+
+    /* Normal gallery */
+
     #gallery {
         grid-template-columns: 1fr;
-
         gap: 15px;
     }
 
     #gallery img {
         width: 100%;
-
-        height: auto;
-
-        max-height: 500px;
-
+        height: 300px;
         object-fit: cover;
     }
 
+
+    /* Featured gallery */
+
+    #featured-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #featured-gallery img {
+        width: 100%;
+        height: 220px;
+    }
+
+
+    /* Category images */
+
     main > a {
         display: block;
-
         margin: 15px auto;
     }
 
     main > a img {
         width: 100%;
-
         max-width: 350px;
-
         height: 180px;
     }
+
+
+    /* About */
 
     main ul {
         padding: 18px 30px;
     }
 
+
+    /* Form */
+
     form {
         width: 100%;
-
         padding: 18px;
     }
 
+
+    /* Footer */
+
     footer {
         margin-top: 40px;
-
         padding: 25px 15px;
     }
 }
