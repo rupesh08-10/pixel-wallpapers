@@ -10,10 +10,17 @@ function loadImages(folder, name) {
     const gallery = document.getElementById("gallery");
 
     let i = 1;
+    const maxImages = 200;
 
     return new Promise(function (resolve) {
 
         function loadNextImage() {
+
+            // Stop after maximum number
+            if (i > maxImages) {
+                resolve();
+                return;
+            }
 
             const img = document.createElement("img");
 
@@ -24,21 +31,22 @@ function loadImages(folder, name) {
             // Image loaded successfully
             img.onload = function () {
 
-                // Add to normal gallery only if gallery exists
+                console.log("Loaded:", img.src);
+
                 if (gallery) {
 
                     gallery.appendChild(img);
 
                     img.addEventListener("click", function () {
+
                         openViewer(img.src, img.alt);
+
                     });
 
                 }
 
-
                 // Save image for Featured Wallpapers
                 allLoadedImages.push(img.src);
-
 
                 i++;
 
@@ -47,12 +55,16 @@ function loadImages(folder, name) {
             };
 
 
-            // No more images
+            // Image not found
             img.onerror = function () {
 
-                console.log(`${name} wallpapers finished.`);
+                console.log("Image not found:", img.src);
 
-                resolve();
+                // IMPORTANT:
+                // Don't stop the entire loop.
+                i++;
+
+                loadNextImage();
 
             };
 
@@ -63,8 +75,6 @@ function loadImages(folder, name) {
     });
 
 }
-
-
 // =====================================
 // FULL-SCREEN VIEWER
 // =====================================
