@@ -18,34 +18,36 @@ function loadImages(folder, name) {
             const img = document.createElement("img");
 
             img.src = `image/${folder}/${name} (${i}).jpg`;
-
             img.alt = `${name} Wallpaper ${i}`;
 
 
             // Image loaded successfully
             img.onload = function () {
 
-                gallery.appendChild(img);
+                // Add to normal gallery only if gallery exists
+                if (gallery) {
 
-                // Save image for Featured section
+                    gallery.appendChild(img);
+
+                    img.addEventListener("click", function () {
+                        openViewer(img.src, img.alt);
+                    });
+
+                }
+
+
+                // Save image for Featured Wallpapers
                 allLoadedImages.push(img.src);
-
-
-                // Full-screen viewer
-                img.addEventListener("click", function () {
-
-                    openViewer(img.src, img.alt);
-
-                });
 
 
                 i++;
 
                 loadNextImage();
+
             };
 
 
-            // No more images in this folder
+            // No more images
             img.onerror = function () {
 
                 console.log(`${name} wallpapers finished.`);
@@ -53,13 +55,14 @@ function loadImages(folder, name) {
                 resolve();
 
             };
+
         }
 
         loadNextImage();
 
     });
-}
 
+}
 
 
 // =====================================
@@ -96,7 +99,7 @@ function openViewer(imageSrc, imageAlt) {
         });
 
 
-    // Click outside image to close
+    // Click outside image
     viewer.addEventListener("click", function (event) {
 
         if (event.target === viewer) {
@@ -110,7 +113,6 @@ function openViewer(imageSrc, imageAlt) {
 }
 
 
-
 // =====================================
 // FEATURED WALLPAPERS
 // =====================================
@@ -122,7 +124,7 @@ function loadFeaturedImages() {
 
     if (!gallery) {
 
-        console.log("ERROR: featured-gallery not found.");
+        console.log("Featured gallery not found.");
 
         return;
 
@@ -132,19 +134,20 @@ function loadFeaturedImages() {
     console.log("Total loaded images:", allLoadedImages.length);
 
 
-    // Make a copy of all loaded images
     let availableImages = [...allLoadedImages];
 
 
-    // We want 6 Featured images
-    for (let i = 0; i < 6; i++) {
+    // Show 6 random images
+    for (let i = 0; i < 30; i++) {
 
         if (availableImages.length === 0) {
+
             break;
+
         }
 
 
-        // Pick random image
+        // Random image
         const randomIndex =
             Math.floor(Math.random() * availableImages.length);
 
@@ -152,7 +155,7 @@ function loadFeaturedImages() {
         const imageSrc = availableImages[randomIndex];
 
 
-        // Remove it so there are no duplicates
+        // Remove it to prevent duplicates
         availableImages.splice(randomIndex, 1);
 
 
@@ -164,7 +167,7 @@ function loadFeaturedImages() {
         img.alt = "Featured Wallpaper";
 
 
-        // Add to Featured gallery
+        // Add to Featured section
         gallery.appendChild(img);
 
 
