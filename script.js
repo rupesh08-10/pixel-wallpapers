@@ -58,13 +58,10 @@ function loadImages(folder, name) {
             // Image not found
             img.onerror = function () {
 
-                console.log("Image not found:", img.src);
+                console.log("Finished loading:", folder);
 
-                // IMPORTANT:
-                // Don't stop the entire loop.
-                i++;
-
-                loadNextImage();
+                // Stop searching this folder
+                resolve();
 
             };
 
@@ -75,6 +72,8 @@ function loadImages(folder, name) {
     });
 
 }
+
+
 // =====================================
 // FULL-SCREEN VIEWER
 // =====================================
@@ -147,7 +146,7 @@ function loadFeaturedImages() {
     let availableImages = [...allLoadedImages];
 
 
-    // Show 6 random images
+    // Show 30 random images
     for (let i = 0; i < 30; i++) {
 
         if (availableImages.length === 0) {
